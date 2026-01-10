@@ -4,6 +4,7 @@ import CashIn from "./pages/CashIn";
 import CashOut from "./pages/CashOut";
 import Confirm from "./pages/Confirm";
 import History from "./pages/History";
+import Success from "./pages/Success";
 
 export default function App() {
   return (
@@ -14,8 +15,9 @@ export default function App() {
             <Route path="/" element={<Home />}></Route>
             <Route path="/cashin" element={<CashIn />}></Route>
             <Route path="/cashout" element={<CashOut />}></Route>
-            <Route path="/confirm" element={<Confirm />}></Route>
+            <Route path="/cashout/confirm" element={<Confirm />}></Route>
             <Route path="/history" element={<History />}></Route>
+            <Route path="cashout/confirm/success" element={<Success />}></Route>
           </Routes>
         </div>
       </BrowserRouter>

@@ -6,7 +6,7 @@ export default function CashIn() {
   return (
     <>
       <div>
-        <div className="flex w-full h-10 bg-orange-500 rounded-xl justify-center items-center">
+        <div className="flex w-full h-[3rem] bg-gradient-to-tr from-orange-500 to-orange-200 rounded-xl justify-center items-center">
           <h1 className="text-white text-center items-center">
             ဝင်လာမဆဲ တသဲသဲ
           </h1>

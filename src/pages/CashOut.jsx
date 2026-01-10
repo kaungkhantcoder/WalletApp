@@ -5,13 +5,13 @@ export default function CashOut() {
   return (
     <>
       <div className="">
-        <div className="flex w-full h-10 bg-orange-500 rounded-xl justify-center items-center">
+        <div className="flex w-full h-[3rem] bg-gradient-to-tr from-orange-500 to-orange-200 rounded-xl justify-center items-center">
           <h1 className="text-white text-center items-center">
             နည်းနည်းပဲ လွှဲမယ်
           </h1>
         </div>
 
-        <div class="w-full mt-5">
+        <div class="w-full mt-3">
           <form class="px-8 pt-6 pb-8 mb-1 ">
             <div class="mb-4">
               <label
@@ -93,7 +93,7 @@ export default function CashOut() {
               <button
                 class="bg-orange-500 hover:bg-orange-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 type="button"
-                onClick={() => navigate("/confirm")}
+                onClick={() => navigate("/cashout/confirm")}
               >
                 Check
               </button>

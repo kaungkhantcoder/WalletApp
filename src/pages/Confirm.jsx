@@ -30,6 +30,18 @@ export default function Confirm() {
                 <h3 className="text-center">Kaung Khant</h3>
               </div>
             </div>
+
+            <div class="mb-4">
+              <label
+                class="block text-gray-700 text-sm text-center font-bold mb-2"
+                for="receive name"
+              >
+                 Ammount
+              </label>
+              <div className="flex w-full rounded-xl h-10 bg-white border border-orange-500 justify-center items-center">
+                <h3 className="text-center">50,000 MMK</h3>
+              </div>
+            </div>
           </form>
         </div>
         <div>
@@ -42,7 +54,7 @@ export default function Confirm() {
 
           <button
             className="flex w-full h-10 bg-orange-500 rounded-xl justify-center items-center mt-3"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/cashout/confirm/success")}
           >
             <h1 className="text-white text-center">Confirm</h1>
           </button>
