@@ -1,4 +1,4 @@
-export default function Buttons() {
+export default function Services() {
     return(
         <>
         <div className="mt-5">
@@ -21,7 +21,7 @@ export default function Buttons() {
                 </div>
             </div>
         </div>
-            
+
         </>
     )
 }

@@ -1,35 +1,24 @@
-import BalanceCard from "./components/BalanceCard";
-import Buttons from "./components/Services";
-import Profile from "./components/Profile";
-import Payment from "./components/Paymet";
-import History from "./components/History";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-const Greeting = () => {
-  const hour = new Date().getHours();
-
-  if (hour < 12) return "Good Morning";
-  if (hour < 18) return "Good Afternoon";
-  return "Good Evening";
-}
-
+import Home from "./pages/Home";
+import CashIn from "./pages/CashIn";
+import CashOut from "./pages/CashOut";
+import Confirm from "./pages/Confirm";
+import History from "./pages/History";
 
 export default function App() {
-
   return (
     <>
-    <BrowserRouter>
-    <Routes></Routes>
-    </BrowserRouter>
-    <div className="w-[375px] h-auto mx-auto m-5 p-5 border-[5px] shadow-md border-black rounded-[30px]">
-      <h1 className="text-orange-500 font-bold">{Greeting()}</h1>
-      <Profile />
-      <BalanceCard />
-      <Payment />
-      <Buttons />
-      <History />
-    </div>
-
+      <BrowserRouter>
+        <div className="w-[375px] h-[42rem] mx-auto m-5 p-5 border-[5px] shadow-md border-black rounded-[30px]">
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/cashin" element={<CashIn />}></Route>
+            <Route path="/cashout" element={<CashOut />}></Route>
+            <Route path="/confirm" element={<Confirm />}></Route>
+            <Route path="/history" element={<History />}></Route>
+          </Routes>
+        </div>
+      </BrowserRouter>
     </>
-  )
-} 
+  );
+}
