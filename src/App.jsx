@@ -5,6 +5,7 @@ import CashOut from "./pages/CashOut";
 import Confirm from "./pages/Confirm";
 import History from "./pages/History";
 import Success from "./pages/Success";
+import SignIn from "./pages/auth/SignIn";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <div className="w-[375px] h-[42rem] mx-auto m-5 p-5 border-[5px] shadow-md border-black rounded-[30px]">
           <Routes>
             <Route path="/" element={<Home />}></Route>
+            <Route path="/signin" element={<SignIn />}></Route>
             <Route path="/cashin" element={<CashIn />}></Route>
             <Route path="/cashout" element={<CashOut />}></Route>
             <Route path="/cashout/confirm" element={<Confirm />}></Route>
