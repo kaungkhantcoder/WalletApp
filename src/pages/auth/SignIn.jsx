@@ -1,7 +1,10 @@
 export default function SignIn() {
   return (
     <>
-      <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+      <div class="flex min-h-full flex-col  px-6 py-12">
+        <button className="flex items-center justify-start h-10 ">
+          <h3 className="bg-orange-500 py-2 px-3 text-white  rounded-md">Back</h3>
+        </button>
         <div class="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight">
             Sign in to your account
@@ -40,7 +43,7 @@ export default function SignIn() {
                 <div class="text-sm">
                   <a
                     href="#"
-                    class="font-semibold text-indigo-400 hover:text-indigo-300"
+                    class="font-semibold text-orange-400 hover:text-orange-300"
                   >
                     Forgot password?
                   </a>
