@@ -6,6 +6,7 @@ import Confirm from "./pages/Confirm";
 import History from "./pages/History";
 import Success from "./pages/Success";
 import SignIn from "./pages/auth/SignIn";
+import SignUp from "./pages/auth/SignUp";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/signin" element={<SignIn />}></Route>
+            <Route path="/register" element={<SignUp />}></Route>
             <Route path="/cashin" element={<CashIn />}></Route>
             <Route path="/cashout" element={<CashOut />}></Route>
             <Route path="/cashout/confirm" element={<Confirm />}></Route>
