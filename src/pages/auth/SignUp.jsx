@@ -3,21 +3,51 @@ export default function SignUp() {
     <>
       <div class="flex min-h-full flex-col  px-6 py-12">
         <button className="flex items-center justify-start h-10 ">
-          <h3 className="bg-orange-500 py-2 px-3 text-white  rounded-md">Back</h3>
+          <h3 className="bg-orange-500 py-2 px-3 text-white  rounded-md">
+            Back
+          </h3>
         </button>
         <div class="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight">
-            Sign in to your account
+            Create you account
           </h2>
         </div>
 
         <div class="mt-10">
-          <form action="#" method="POST" class="space-y-6">
+          <form action="#" method="POST" class="space-y-2">
             <div>
-              <label
-                for="email"
-                class="block text-sm/6 font-medium"
-              >
+              <label for="firstname" class="block text-sm/6 font-medium">
+                First Name
+              </label>
+              <div class="mt-2">
+                <input
+                  id="firstname"
+                  type="text"
+                  name="firstname"
+                  required
+                  autocomplete="firstname"
+                  class="block w-full rounded-md border-2 border-orange-400  px-3 py-1.5 text-black outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500"
+                />
+              </div>
+            </div>
+            <div>
+              <label for="firstname" class="block text-sm/6 font-medium">
+                Second Name
+              </label>
+              <div class="mt-2">
+                <input
+                  id="firstname"
+                  type="text"
+                  name="firstname"
+                  required
+                  autocomplete="firstname"
+                  class="block w-full rounded-md border-2 border-orange-400  px-3 py-1.5 text-black outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm/6 font-medium">
                 Email address
               </label>
               <div class="mt-2">
@@ -34,10 +64,7 @@ export default function SignUp() {
 
             <div>
               <div class="flex items-center justify-between">
-                <label
-                  for="password"
-                  class="block text-sm/6 font-medium"
-                >
+                <label for="password" class="block text-sm/6 font-medium">
                   Password
                 </label>
                 <div class="text-sm">
