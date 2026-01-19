@@ -26,6 +26,7 @@ export default function CashIn() {
 
         <div className="flex w-full h-10 bg-orange-500 rounded-xl justify-center items-center mt-5">
           <h1 className="text-white text-center items-center">+959 96938834</h1>
+          
         </div>
 
         <button className="flex w-full h-10 bg-orange-500 rounded-xl justify-center items-center mt-[11rem]"

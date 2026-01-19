@@ -17,7 +17,7 @@ export default function CashOut() {
       <div className="">
         <div className="flex w-full h-[3rem] bg-gradient-to-tr from-orange-500 to-orange-200 rounded-xl justify-center items-center">
           <h1 className="text-white text-center items-center">
-            နည်းနည်းပဲ လွှဲမယ်
+            Transcript
           </h1>
         </div>
 
