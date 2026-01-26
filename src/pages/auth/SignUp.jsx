@@ -16,31 +16,16 @@ export default function SignUp() {
         <div class="mt-10">
           <form action="#" method="POST" class="space-y-2">
             <div>
-              <label for="firstname" class="block text-sm/6 font-medium">
-                First Name
+              <label for="username" class="block text-sm/6 font-medium">
+                Username
               </label>
               <div class="mt-2">
                 <input
-                  id="firstname"
+                  id="username"
                   type="text"
-                  name="firstname"
+                  name="username"
                   required
-                  autocomplete="firstname"
-                  class="block w-full rounded-md border-2 border-orange-400  px-3 py-1.5 text-black outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500"
-                />
-              </div>
-            </div>
-            <div>
-              <label for="firstname" class="block text-sm/6 font-medium">
-                Second Name
-              </label>
-              <div class="mt-2">
-                <input
-                  id="firstname"
-                  type="text"
-                  name="firstname"
-                  required
-                  autocomplete="firstname"
+                  autocomplete="username"
                   class="block w-full rounded-md border-2 border-orange-400  px-3 py-1.5 text-black outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500"
                 />
               </div>
@@ -67,14 +52,6 @@ export default function SignUp() {
                 <label for="password" class="block text-sm/6 font-medium">
                   Password
                 </label>
-                <div class="text-sm">
-                  <a
-                    href="#"
-                    class="font-semibold text-orange-400 hover:text-orange-300"
-                  >
-                    Forgot password?
-                  </a>
-                </div>
               </div>
               <div class="mt-2">
                 <input
@@ -94,6 +71,15 @@ export default function SignUp() {
                 class="flex w-full justify-center rounded-md bg-orange-500 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-orange-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
               >
                 Sign Up
+              </button>
+            </div>
+
+            <div className="flex">
+              <button
+                type="submit"
+                class="flex w-full justify-center rounded-md bg-blue-500 px-3 py-1.5 text-[13px] font-semibold text-white hover:bg-blue-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+              >
+                SignUp with Google
               </button>
             </div>
           </form>
