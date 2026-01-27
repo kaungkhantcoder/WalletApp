@@ -1,8 +1,14 @@
+import { useNavigate } from "react-router-dom";
+
 export default function SignUp() {
+  const navigate = useNavigate();
   return (
     <>
       <div class="flex min-h-full flex-col  px-6 py-12">
-        <button className="flex items-center justify-start h-10 ">
+        <button
+          className="flex items-center justify-start h-10 "
+          onClick={() => navigate("/")}
+        >
           <h3 className="bg-orange-500 py-2 px-3 text-white  rounded-md">
             Back
           </h3>
@@ -26,7 +32,7 @@ export default function SignUp() {
                   name="username"
                   required
                   autocomplete="username"
-                  class="block w-full rounded-md border-2 border-orange-400  px-3 py-1.5 text-black outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500"
+                  class="block w-full rounded-md border border-orange-400  px-3 py-1.5 text-black focus:outline-none focus:border-2 focus:border-orange-500  placeholder:text-gray-500"
                 />
               </div>
             </div>
@@ -42,7 +48,7 @@ export default function SignUp() {
                   name="email"
                   required
                   autocomplete="email"
-                  class="block w-full rounded-md border-2 border-orange-400  px-3 py-1.5 text-black outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500"
+                  class="block w-full rounded-md border border-orange-400  px-3 py-1.5 text-black focus:outline-none focus:border-2 focus:border-orange-500 placeholder:text-gray-500"
                 />
               </div>
             </div>
@@ -60,29 +66,26 @@ export default function SignUp() {
                   name="password"
                   required
                   autocomplete="current-password"
-                  class="block w-full rounded-md  border-2 focus:border-orange-400  bg-gray-200 px-3 py-1.5 text-base text-black"
+                  class="block w-full rounded-md border border-orange-400  px-3 py-1.5 text-black focus:outline-none focus:border-2 focus:border-orange-500  placeholder:text-gray-500"
                 />
               </div>
             </div>
-
-            <div>
-              <button
-                type="submit"
-                class="flex w-full justify-center rounded-md bg-orange-500 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-orange-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-              >
-                Sign Up
-              </button>
-            </div>
-
-            <div className="flex">
-              <button
-                type="submit"
-                class="flex w-full justify-center rounded-md bg-blue-500 px-3 py-1.5 text-[13px] font-semibold text-white hover:bg-blue-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-              >
-                SignUp with Google
-              </button>
-            </div>
           </form>
+          <div className="mt-5 grid grid-cols-1 gap-2">
+            <button
+              type="submit"
+              class="flex w-full justify-center rounded-md bg-orange-500 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-orange-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+            >
+              Sign Up
+            </button>
+
+            <button
+              type="submit"
+              class="flex w-full justify-center rounded-md bg-blue-500 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-blue-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+            >
+              SignUp with Google
+            </button>
+          </div>
         </div>
       </div>
     </>

@@ -14,13 +14,13 @@ const Greeting = () => {
 
 export default function Home() {
   return (
-    <>
+    <div className="p-5">
       <h1 className="text-orange-500 font-bold">{Greeting()}</h1>
       <Profile />
       <BalanceCard />
       <Payment />
       <Services />
       <HistoryCard />
-    </>
+    </div>
   );
 }

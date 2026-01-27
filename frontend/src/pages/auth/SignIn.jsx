@@ -1,9 +1,15 @@
+import { useNavigate } from "react-router-dom";
+
+
 export default function SignIn() {
+  const navigate = useNavigate()
+
   return (
     <>
       <div class="flex min-h-full flex-col  px-6 py-12">
         <button className="flex items-center justify-start h-10 ">
-          <h3 className="bg-orange-500 py-2 px-3 text-white  rounded-md">Back</h3>
+          <h3 className="bg-orange-500 py-2 px-3 text-white  rounded-md"
+          onClick={() => navigate("/")}>Back</h3>
         </button>
         <div class="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight">

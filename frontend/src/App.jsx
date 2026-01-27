@@ -7,14 +7,16 @@ import History from "./pages/History";
 import Success from "./pages/Success";
 import SignIn from "./pages/auth/SignIn";
 import SignUp from "./pages/auth/SignUp";
+import LandingPage from "./pages/LandingPage";
 
 export default function App() {
   return (
     <>
       <BrowserRouter>
-        <div className="w-[375px] h-[42rem] mx-auto m-5 p-5 border-[5px] shadow-md border-black rounded-[30px]">
+        <div className="w-[375px] h-[42rem] mx-auto m-5  border-[5px] shadow-md border-black rounded-[30px]">
           <Routes>
-            <Route path="/" element={<Home />}></Route>
+            <Route path="/" element={<LandingPage />}></Route>
+            <Route path="home" element={<Home />}></Route>
             <Route path="/signin" element={<SignIn />}></Route>
             <Route path="/register" element={<SignUp />}></Route>
             <Route path="/cashin" element={<CashIn />}></Route>
