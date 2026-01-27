@@ -6,7 +6,7 @@ export default function CashIn() {
 
   return (
     <>
-      <div>
+      <div className="p-5">
         <div className="flex w-full h-[3rem] bg-gradient-to-tr from-orange-500 to-orange-200 rounded-xl justify-center items-center">
           <h1 className="text-white text-center items-center">
            Cash In
@@ -26,11 +26,11 @@ export default function CashIn() {
 
         <div className="flex w-full h-10 bg-orange-500 rounded-xl justify-center items-center mt-5">
           <h1 className="text-white text-center items-center">+959 96938834</h1>
-          
+
         </div>
 
         <button className="flex w-full h-10 bg-orange-500 rounded-xl justify-center items-center mt-[11rem]"
-        onClick={() => navigate("/")}>
+        onClick={() => navigate("/home")}>
           <h1 className="text-white text-center items-center">
             Back
           </h1>

@@ -14,7 +14,7 @@ export default function CashOut() {
   };
   return (
     <>
-      <div className="">
+      <div className="p-5">
         <div className="flex w-full h-[3rem] bg-gradient-to-tr from-orange-500 to-orange-200 rounded-xl justify-center items-center">
           <h1 className="text-white text-center items-center">
             Transcript
@@ -114,7 +114,7 @@ export default function CashOut() {
           </form>
           <button
             className="flex w-full h-10 bg-orange-500 rounded-xl justify-center items-center"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/home")}
           >
             <h1 className="text-white text-center items-center">Back</h1>
           </button>

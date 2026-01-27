@@ -21,19 +21,19 @@ export default function SignIn() {
           <form action="#" method="POST" class="space-y-6">
             <div>
               <label
-                for="email"
+                for="phone"
                 class="block text-sm/6 font-medium"
               >
-                Email address
+                Phone Number
               </label>
               <div class="mt-2">
                 <input
-                  id="email"
-                  type="email"
-                  name="email"
+                  id="phone"
+                  type="number"
+                  name="phone"
                   required
-                  autocomplete="email"
-                  class="block w-full rounded-md border-2 border-orange-400  px-3 py-1.5 text-black outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500"
+                  autocomplete="phone"
+                  class="block w-full rounded-md border border-orange-400  px-3 py-1.5 text-black focus:outline-none focus:border-2 focus:border-orange-500  placeholder:text-gray-500"
                 />
               </div>
             </div>
@@ -62,7 +62,7 @@ export default function SignIn() {
                   name="password"
                   required
                   autocomplete="current-password"
-                  class="block w-full rounded-md  border-2 focus:border-orange-400  bg-gray-200 px-3 py-1.5 text-base text-black"
+                  class="block w-full rounded-md border border-orange-400  px-3 py-1.5 text-black focus:outline-none focus:border-2 focus:border-orange-500  placeholder:text-gray-500"
                 />
               </div>
             </div>

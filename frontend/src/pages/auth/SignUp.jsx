@@ -23,6 +23,22 @@ export default function SignUp() {
           <form action="#" method="POST" class="space-y-2">
             <div>
               <label for="username" class="block text-sm/6 font-medium">
+                Phone Number
+              </label>
+              <div class="mt-2">
+                <input
+                  id="phone"
+                  type="number"
+                  name="phone"
+                  required
+                  autocomplete="phone"
+                  class="block w-full rounded-md border border-orange-400  px-3 py-1.5 text-black focus:outline-none focus:border-2 focus:border-orange-500  placeholder:text-gray-500"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="username" class="block text-sm/6 font-medium">
                 Username
               </label>
               <div class="mt-2">
@@ -81,9 +97,10 @@ export default function SignUp() {
 
             <button
               type="submit"
-              class="flex w-full justify-center rounded-md bg-blue-500 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-blue-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+              class="flex w-full justify-center rounded-md bg-orange-600 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-orange-500"
+              onClick={() => navigate("/signin")}
             >
-              SignUp with Google
+              Already have account
             </button>
           </div>
         </div>

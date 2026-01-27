@@ -7,7 +7,7 @@ export default function Success() {
   const {phone, username, amount, note} = location.state || {};
   return (
     <>
-      <div>
+      <div className="p-5">
         <div>
           <div className="text-center text-[50px]">
             <p>✅</p>
@@ -39,7 +39,7 @@ export default function Success() {
         </div>
         <button
           className="flex w-full h-10 bg-orange-500 rounded-xl justify-center items-center mt-10"
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/home")}
         >
           <h1 className="text-white text-center">OK</h1>
         </button>

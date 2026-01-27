@@ -8,7 +8,7 @@ export default function Confirm() {
   const { phone, username, amount, note } = location.state || {};
   return (
     <>
-      <div>
+      <div className="p-5">
         <div>
           <form class="px-4 pt-6 pb-8 mb-4 ">
             <div class="mb-4">
