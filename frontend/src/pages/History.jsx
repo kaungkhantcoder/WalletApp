@@ -6,7 +6,7 @@ export default function History() {
 
   return (
     <>
-      <div>
+      <div className="p-5">
         <h1 className="text-orange-500 text-center text-[1.5rem] font-bold">
           History
         </h1>
@@ -92,7 +92,7 @@ export default function History() {
         </div>
         <button
           className="flex w-full h-10 bg-orange-500 rounded-xl justify-center items-center mt-5"
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/home")}
         >
           <h1 className="text-white text-center items-center">Back</h1>
         </button>
