@@ -1,15 +1,18 @@
 import { useNavigate } from "react-router-dom";
 
-
 export default function SignIn() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <>
       <div class="flex min-h-full flex-col  px-6 py-12">
         <button className="flex items-center justify-start h-10 ">
-          <h3 className="bg-orange-500 py-2 px-3 text-white  rounded-md"
-          onClick={() => navigate("/")}>Back</h3>
+          <h3
+            className="bg-orange-500 py-2 px-3 text-white  rounded-md"
+            onClick={() => navigate("/")}
+          >
+            Back
+          </h3>
         </button>
         <div class="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight">
@@ -20,10 +23,7 @@ export default function SignIn() {
         <div class="mt-10">
           <form action="#" method="POST" class="space-y-6">
             <div>
-              <label
-                for="phone"
-                class="block text-sm/6 font-medium"
-              >
+              <label for="phone" class="block text-sm/6 font-medium">
                 Phone Number
               </label>
               <div class="mt-2">
@@ -40,10 +40,7 @@ export default function SignIn() {
 
             <div>
               <div class="flex items-center justify-between">
-                <label
-                  for="password"
-                  class="block text-sm/6 font-medium"
-                >
+                <label for="password" class="block text-sm/6 font-medium">
                   Password
                 </label>
                 <div class="text-sm">
@@ -67,12 +64,20 @@ export default function SignIn() {
               </div>
             </div>
 
-            <div>
+            <div className="">
               <button
                 type="submit"
                 class="flex w-full justify-center rounded-md bg-orange-500 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-orange-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
               >
                 Sign in
+              </button>
+
+              <button
+                type="submit"
+                class="flex w-full justify-center rounded-md  px-3 py-1.5 text-sm/6 font-semibold text-orange-500 underline"
+                onClick={() => navigate("/register")}
+              >
+                Register your account
               </button>
             </div>
           </form>
