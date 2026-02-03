@@ -4,7 +4,7 @@ export default function LandingPage() {
   const navigate = useNavigate();
   return (
     <>
-      <div className="flex h-full bg-gradient-to-tr from-orange-300 to-orange-500 rounded-[25px]  items-center justify-center">
+      <div className="flex h-full bg-gradient-to-tr from-zinc-800 to-zinc-900 rounded-[25px]  items-center justify-center">
         <div>
           <div className="text-white p-5 text-center">
             <h1 className="text-[3rem] mb-5">💸</h1>
