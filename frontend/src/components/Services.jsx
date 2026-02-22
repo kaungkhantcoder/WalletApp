@@ -6,7 +6,7 @@ export default function Services() {
             <div className="flex justify-between mt-3 bg-orange-400 p-3 rounded-lg shadow-md">
               <h1 className="text-white font-bold">Services are comming soon!</h1>
 
-                <div className="flex items-center justify-center w-10 h-10 bg-orange-600 rounded-full">
+                {/* <div className="flex items-center justify-center w-10 h-10 bg-orange-600 rounded-full">
                     <h3 className="text-[10px] text-white font-bold">Topup</h3>
                 </div>
                 <div className="flex items-center justify-center w-10 h-10 bg-orange-300 rounded-full">
@@ -20,7 +20,7 @@ export default function Services() {
                 </div>
                 <div className="flex items-center justify-center w-10 h-10 bg-orange-300 rounded-full">
                     <h3 className="text-[10px] text-white font-bold">Cards</h3>
-                </div>
+                </div> */}
 
 
             </div>
