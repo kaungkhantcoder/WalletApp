@@ -21,12 +21,12 @@ def transfer():
     receiver_user = User.query.filter_by(phone=receiver_phone).first()
 
     if not receiver_user:
-        return jsonify({"message": "လက်ခံမည့်သူ ရှာမတွေ့ပါ"}), 404
+        return jsonify({"message": "Account has not been created."}), 404
 
     receiver_wallet = receiver_user.wallet
 
     if sender_wallet.balance < amount:
-        return jsonify({"message": "လက်ကျန်ငွေ မလုံလောက်ပါ"}), 400
+        return jsonify({"message": "Amount not enough, Cash In first"}), 400
 
     try:
         sender_wallet.balance -= amount
@@ -42,7 +42,7 @@ def transfer():
         db.session.add(new_tx)
         db.session.commit()
 
-        return jsonify({"message": "ငွေလွှဲပြောင်းမှု အောင်မြင်ပါသည်"}), 200
+        return jsonify({"message": "Transaction Successful"}), 200
     except Exception as e:
         db.session.rollback()
         return jsonify({"error": str(e)}), 500
@@ -70,3 +70,11 @@ def get_history():
         })
 
     return jsonify(results), 200
+
+
+@routes_bp.route('/balance', methods=['GET'])
+@jwt_required()
+def get_balance():
+    current_user_id = get_jwt_identity()
+    wallet = Wallet.query.filter_by(user_id=current_user_id).first()
+    return jsonify({"balance": float(wallet.balance)}), 200

@@ -7,6 +7,12 @@ __pycache__/
 env/
 venv/
 
+# SQLite database
+instance/
+*.db
+backend/instance/
+backend/*.db
+
 # Environment variables
 .env
 

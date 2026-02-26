@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios"; // axios
+import axios from "axios";
 
 export default function SignIn() {
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ export default function SignIn() {
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("username", response.data.username);
         alert("Successful Login");
-        navigate("/dashboard"); // Dashboard
+        navigate("/home");
       }
     } catch (error) {
       alert(error.response?.data?.message || "Login Error");

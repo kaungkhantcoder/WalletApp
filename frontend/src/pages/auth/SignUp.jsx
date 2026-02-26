@@ -1,108 +1,95 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function SignUp() {
   const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    phone: "",
+    password: ""
+  })
+
+  const handleRegister = async (e) => {
+    e.preventDefault()
+    try {
+      const response = await axios.post("http://127.0.0.1:5000/register", formData)
+      if (response.status === 201) {
+        alert("Your account has been created")
+        navigate("/signin")
+      }
+    } catch (error) {
+      alert(error.response?.data?.error || "Something went wrong!")
+    }
+  }
+
   return (
     <>
-      <div class="flex min-h-full flex-col  px-6 py-12">
-        <button
-          className="flex items-center justify-start h-10 "
-          onClick={() => navigate("/")}
-        >
-          <h3 className="bg-orange-500 py-2 px-3 text-white  rounded-md">
-            Back
-          </h3>
+      <div className="flex min-h-full flex-col px-6 py-12">
+        <button className="flex items-center justify-start h-10 " onClick={() => navigate("/")}>
+          <h3 className="bg-orange-500 py-2 px-3 text-white rounded-md">Back</h3>
         </button>
-        <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-          <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight">
-            Create you account
-          </h2>
+
+        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+          <h2 className="mt-10 text-center text-2xl font-bold tracking-tight">Create your account</h2>
         </div>
 
-        <div class="mt-10">
-          <form action="#" method="POST" class="space-y-2">
+        <div className="mt-10">
+          <form className="space-y-4" onSubmit={handleRegister}>
+
+            {/* Phone Number Input */}
             <div>
-              <label for="username" class="block text-sm/6 font-medium">
-                Phone Number
-              </label>
-              <div class="mt-2">
-                <input
-                  id="phone"
-                  type="number"
-                  name="phone"
-                  required
-                  autocomplete="phone"
-                  class="block w-full rounded-md border border-orange-400  px-3 py-1.5 text-black focus:outline-none focus:border-2 focus:border-orange-500  placeholder:text-gray-500"
-                />
-              </div>
+              <label className="block text-sm font-medium">Phone Number</label>
+              <input
+                type="number"
+                required
+                className="block w-full rounded-md border border-orange-400 px-3 py-1.5"
+                onChange={(e) => setFormData({...formData, phone: e.target.value})}
+              />
             </div>
 
+            {/* Username Input */}
             <div>
-              <label for="username" class="block text-sm/6 font-medium">
-                Username
-              </label>
-              <div class="mt-2">
-                <input
-                  id="username"
-                  type="text"
-                  name="username"
-                  required
-                  autocomplete="username"
-                  class="block w-full rounded-md border border-orange-400  px-3 py-1.5 text-black focus:outline-none focus:border-2 focus:border-orange-500  placeholder:text-gray-500"
-                />
-              </div>
+              <label className="block text-sm font-medium">Username</label>
+              <input
+                type="text"
+                required
+                className="block w-full rounded-md border border-orange-400 px-3 py-1.5"
+                onChange={(e) => setFormData({...formData, username: e.target.value})}
+              />
             </div>
 
+            {/* Email Input */}
             <div>
-              <label for="email" class="block text-sm/6 font-medium">
-                Email address
-              </label>
-              <div class="mt-2">
-                <input
-                  id="email"
-                  type="email"
-                  name="email"
-                  required
-                  autocomplete="email"
-                  class="block w-full rounded-md border border-orange-400  px-3 py-1.5 text-black focus:outline-none focus:border-2 focus:border-orange-500 placeholder:text-gray-500"
-                />
-              </div>
+              <label className="block text-sm font-medium">Email address</label>
+              <input
+                type="email"
+                required
+                className="block w-full rounded-md border border-orange-400 px-3 py-1.5"
+                onChange={(e) => setFormData({...formData, email: e.target.value})}
+              />
             </div>
 
+            {/* Password Input */}
             <div>
-              <div class="flex items-center justify-between">
-                <label for="password" class="block text-sm/6 font-medium">
-                  Password
-                </label>
-              </div>
-              <div class="mt-2">
-                <input
-                  id="password"
-                  type="password"
-                  name="password"
-                  required
-                  autocomplete="current-password"
-                  class="block w-full rounded-md border border-orange-400  px-3 py-1.5 text-black focus:outline-none focus:border-2 focus:border-orange-500  placeholder:text-gray-500"
-                />
-              </div>
+              <label className="block text-sm font-medium">Password</label>
+              <input
+                type="password"
+                required
+                className="block w-full rounded-md border border-orange-400 px-3 py-1.5"
+                onChange={(e) => setFormData({...formData, password: e.target.value})}
+              />
             </div>
-          </form>
-          <div className="mt-5 grid grid-cols-1 gap-2">
-            <button
-              type="submit"
-              class="flex w-full justify-center rounded-md bg-orange-500 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-orange-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-            >
+
+            <button type="submit" className="flex w-full justify-center rounded-md bg-orange-500 px-3 py-1.5 text-white font-semibold hover:bg-orange-400">
               Sign Up
             </button>
+          </form>
 
-            <button
-              type="submit"
-              class="flex w-full justify-center rounded-md bg-orange-600 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-orange-500"
-              onClick={() => navigate("/signin")}
-            >
-              Already have account
-            </button>
-          </div>
+          <button className="flex w-full justify-center mt-2 text-sm text-orange-600 font-semibold" onClick={() => navigate("/signin")}>
+             Already have account
+          </button>
         </div>
       </div>
     </>
