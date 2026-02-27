@@ -10,6 +10,7 @@ import SignUp from "./pages/auth/SignUp";
 import LandingPage from "./pages/LandingPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ProfileSettings from "./pages/ProfileSettings";
+import ChangePassword from "./pages/ChangePassword";
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
             <Route path="/cashout/confirm" element={<ProtectedRoute><Confirm /></ProtectedRoute>} ></Route>
             <Route path="/cashout/confirm/success" element={<ProtectedRoute><Success /></ProtectedRoute>} ></Route>
             <Route path="/profile-settings" element={<ProtectedRoute><ProfileSettings/></ProtectedRoute>} ></Route>
+            <Route path="/change-password" element={<ProtectedRoute><ChangePassword /></ProtectedRoute>} />
             <Route path="/history" element={<History />}></Route>
 
           </Routes>

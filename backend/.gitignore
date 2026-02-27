@@ -18,3 +18,5 @@ backend/*.db
 
 # IDE
 .vscode/
+
+.idea/
