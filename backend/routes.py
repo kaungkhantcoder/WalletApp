@@ -2,6 +2,7 @@ from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from models import db, User, Wallet, Transaction
 from decimal import Decimal
+from werkzeug.security import generate_password_hash, check_password_hash
 
 routes_bp = Blueprint('routes', __name__)
 
@@ -78,3 +79,33 @@ def get_balance():
     current_user_id = get_jwt_identity()
     wallet = Wallet.query.filter_by(user_id=current_user_id).first()
     return jsonify({"balance": float(wallet.balance)}), 200
+
+
+@routes_bp.route('/user/change_password', methods=['PUT'])
+@jwt_required()
+def change_password():
+    current_user_id = get_jwt_identity()
+    data = request.get_json()
+    user = User.query.get(current_user_id)
+
+    if not check_password_hash(user.password_hash, data.get('old_password')):
+        return jsonify({"message": "Old password incorrect"}), 400
+
+    user.password = generate_password_hash(data.get('new_password'))
+    db.session.commit()
+
+    return jsonify({"message": "Password changed successfully"}), 200
+
+@routes_bp.route('/user/me', methods=['GET'])
+@jwt_required()
+def get_user_profile():
+    current_user_id = get_jwt_identity()
+    user = User.query.get(current_user_id)
+
+    if not user:
+        return jsonify({"message": "User not found"}), 404
+
+    return jsonify({
+        "username": user.username,
+        "phone": user.phone,
+    }), 200
